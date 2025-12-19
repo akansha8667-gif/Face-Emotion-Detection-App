@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dashboard</h2>
+<p>Upload an image or use your webcam to detect emotions.</p>
+<form action="{{ url_for('detect') }}" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" accept="image/*" required>
+    <button type="submit">Detect from Image</button>
+</form>
+<h3>Or use Webcam:</h3>
+<video id="video" width="320" height="240" autoplay></video>
+<button id="capture">Capture</button>
+<form id="webcamForm" action="{{ url_for('detect') }}" method="POST" style="display:none;">
+    <input type="hidden" name="webcam_image" id="webcamImage">
+</form>
+{% endblock %}

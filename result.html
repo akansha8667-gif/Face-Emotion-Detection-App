@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Detection Result</h2>
+<p>Detected Emotion: <strong>{{ emotion }}</strong></p>
+<img src="{{ url_for('static', filename='uploads/' + image) }}" alt="Uploaded Image" width="300">
+<a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+{% endblock %}
